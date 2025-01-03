@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews and About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="Logo.png" alt="Team Logo">
+        <h1>Customer Reviews</h1>
+    </header>
+
+    <div class="navigation">
+        <a href="index.html">Home</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="about.html">About Us</a>
+    </div>
+
+    <!-- Reviews Page -->
+    <section class="review" id="reviews">
+        
+    </section>
+
+
+
+
+
+    <!-- Add Review Button -->
+    <button id="addReviewBtn" class="add-review-btn">Add Your Review</button>
+
+    <!-- Popup Overlay -->
+    <div id="reviewPopup" class="overlay">
+        <div class="popup">
+            <span class="close-btn" id="closePopupBtn">&times;</span>
+            <h2>Add Your Review</h2>
+            <form id="reviewForm">
+                <input type="text" id="reviewerName" placeholder="Your Name" required><br><br>
+                <textarea id="reviewText" placeholder="Write your review..." required></textarea><br><br>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; IMPERIALS, All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        const sampleReviews = [
+            {
+                name: "Rajesh Kumar",
+                text: "This website has been incredibly helpful in raising awareness about food adulteration in India. It's user-friendly and informative."
+            },
+            {
+                name: "Ayesha Patel",
+                text: "Food safety is a major concern, and this platform makes it easy to learn and contribute. I strongly recommend it to everyone!"
+            },
+            {
+                name: "Vikram Singh",
+                text: "Fantastic initiative! This website is helping raise awareness about food adulteration issues in India. A must-visit for all."
+            },
+            {
+                name: "Priya Desai",
+                text: "The website offers great tips and insights about identifying adulteration in food products. It is simple yet comprehensive."
+            },
+            {
+                name: "Ravi Sharma",
+                text: "A very informative and helpful platform. The information provided about food safety and adulteration is very relevant in today's world."
+            }
+        ];
+
+        // Save to localStorage
+        localStorage.setItem('reviews', JSON.stringify(sampleReviews));
+
+        // Open the popup when "Add Your Review" button is clicked
+        document.getElementById('addReviewBtn').onclick = function() {
+            document.getElementById('reviewPopup').style.display = 'flex';
+        };
+
+        // Close the popup when close button is clicked
+        document.getElementById('closePopupBtn').onclick = function() {
+            document.getElementById('reviewPopup').style.display = 'none';
+        };
+
+        // Function to convert text to sentence case
+        function toSentenceCase(text) {
+            return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+        }
+
+        // Function to capitalize the first letter of each word
+        function toTitleCase(text) {
+            return text.split(' ').map(function(word) {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }).join(' ');
+        }
+
+        // Function to load reviews from localStorage
+        function loadReviews() {
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || []; // Get stored reviews or an empty array
+            const reviewSection = document.getElementById('reviews');
+            reviewSection.innerHTML = ''; // Clear current reviews
+
+            // Loop through the reviews and add them to the page
+            reviews.forEach(function (review, index) {
+                const newReview = document.createElement('div');
+                newReview.classList.add('review');
+                newReview.innerHTML = `
+                    <div class="review-header">
+                        <h3>${review.name}</h3>
+                        <button class="delete-btn" onclick="deleteReview(${index})">&#10005;</button>
+                    </div>
+                    <p>${review.text}</p>
+                `;
+                reviewSection.appendChild(newReview);
+            });
+        }
+
+
+        // Function to save review to localStorage
+        function saveReview(reviewerName, reviewText) {
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];  // Get existing reviews or empty array
+            const newReview = {
+                name: reviewerName,
+                text: reviewText
+            };
+            reviews.push(newReview);  // Add new review to the array
+            localStorage.setItem('reviews', JSON.stringify(reviews));  // Save the updated array to localStorage
+        }
+
+        
+
+        function deleteReview(index) {
+            // Get current reviews from localStorage
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+            // Remove the review at the specified index
+            reviews.splice(index, 1);
+
+            // Save the updated reviews back to localStorage
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+
+            // Reload the reviews to reflect the changes
+            loadReviews();
+        }
+
+
+        // Handle the review form submission
+        document.getElementById('reviewForm').onsubmit = function(event) {
+            event.preventDefault();
+
+            // Get the reviewer's name and text
+            const reviewerName = document.getElementById('reviewerName').value;
+            const reviewText = toTitleCase(document.getElementById('reviewText').value);  // Use the toTitleCase function
+
+            // Save the review to localStorage
+            saveReview(reviewerName, reviewText);
+
+            // Load the reviews again to update the page
+            loadReviews();
+
+            // Close the popup
+            document.getElementById('reviewPopup').style.display = 'none';
+
+            // Clear the form fields
+            document.getElementById('reviewForm').reset();
+        };
+
+        // Open the popup when "Add Your Review" button is clicked
+        document.getElementById('addReviewBtn').onclick = function() {
+            document.getElementById('reviewPopup').style.display = 'flex';
+        };
+
+        // Close the popup when close button is clicked
+        document.getElementById('closePopupBtn').onclick = function() {
+            document.getElementById('reviewPopup').style.display = 'none';
+        };
+
+        // Load the reviews when the page is loaded
+        window.onload = function() {
+            loadReviews();  // Load and display saved reviews
+        };
+
+
+    </script>
+</body>
+</html>

@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Adulteration</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> <!-- Curvy Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img src="Logo.png" alt="Team Logo"> <!-- Update the logo source here -->
+        <img src="Logo.png" alt="Team Logo">
         <h1>Food Adulteration</h1>
     </header>
-    
+
     <div class="navigation">
-        <a href="#home">Home</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#about">About Us</a>
+        <a href="index.html">Home</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="about.html">About Us</a>
     </div>
 
     <main>
         <div class="content">
             <div class="left-column">
-                <button>Search for Food Product</button>
-                <button>Share Your Solution</button>
+                <button id="searchButton">Search for Food Product</button>
+                <button id="shareButton">Share Your Solution</button>
             </div>
             <div class="right-column">
                 <div class="floating-text">
@@ -42,5 +42,41 @@
     <footer>
         <p>&copy; IMPERIALS, All rights reserved.</p>
     </footer>
+
+    <!-- Popup Overlay for Searching Food -->
+    <div class="popup-overlay" id="searchPopupOverlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('searchPopupOverlay')">&times;</span>
+            <h2>Search Food Product</h2>
+            <form id="searchForm">
+                <input type="text" id="foodName" placeholder="Enter Food Name" required><br><br>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup Overlay for Sharing Solution -->
+    <div class="popup-overlay" id="sharePopupOverlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('sharePopupOverlay')">&times;</span>
+            <h2>Submit Your Solution</h2>
+            <form action="#" method="POST" id="solutionForm">
+                <label for="author">Your Name:</label>
+                <input type="text" id="authorName" placeholder="Your Name" required>
+                <label for="author">Your Email:</label>
+                <input type="email" id="authorEmail" placeholder="Your Email" required>
+                <label for="author">Product:</label>
+                <input type="text" id="foodProduct" placeholder="Food Product" required>
+                <label for="author">Product:</label>
+                <textarea id="solutionText" placeholder="Your Solution" rows="4" required></textarea>
+                <label for="solutionImage">Image:</label>
+                <input type="file" id="solutionImage">
+                <button type="submit">Submit Solution</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+

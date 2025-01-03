@@ -1,66 +1,59 @@
 /* Basic Body Styles */
-/* Basic Body Styles */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    color: #F1FAEE; /* Light text for contrast */
+    color: #F1FAEE;
     position: relative;
-    overflow-x: hidden; /* Prevent scrollbars from appearing due to blur */
+    overflow-x: hidden;
 }
 
 body::before {
     content: '';
-    position: fixed; /* Ensures the background stays fixed */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('BACKGROUND.webp') center/cover no-repeat; /* Add your background image */
-    filter: blur(4px); /* Adjust blur intensity */
-    z-index: -1; /* Keeps it behind all other elements */
+    background: url('BACKGROUND.webp') center/cover no-repeat;
+    filter: blur(4px);
+    z-index: -1;
 }
-
 
 /* Header Section */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #1D3557, #004F5E); /* Darker gradient */
+    background: linear-gradient(to right, #1D3557, #004F5E);
     padding: 20px 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
 header img {
-    height: 120px; /* Increased logo size */
+    height: 120px;
     width: auto;
     position: absolute;
     left: 20px;
     border-radius: 15px;
     padding: 5px;
     filter: brightness(1) drop-shadow(0 4px 20px rgba(19, 18, 18, 0.9));
-    transition: filter 0.3s ease-in-out; /* Smooth transition for hover effect */
+    transition: filter 0.3s ease-in-out;
 }
 
 header img:hover {
     filter: brightness(1) drop-shadow(0 0 25px rgba(0, 0, 0, 0.5));
 }
 
-
-
 header h1 {
     margin: 0;
     font-size: 50px;
-    color: #F1FAEE; /* White text for good contrast */
+    color: #F1FAEE;
     padding: 2rem;
-    font-family: 'Ruben';
     text-transform: uppercase;
     letter-spacing: 3px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 
-                 0px 0px 5px rgba(255, 255, 255, 0.6); /* Dual shadow for depth and glow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0px 0px 5px rgba(255, 255, 255, 0.6);
 }
-
 
 /* Navigation Section */
 .navigation {
@@ -68,26 +61,26 @@ header h1 {
     justify-content: center;
     align-items: center;
     padding: 15px 0;
-    background: #2C6A8D; /* Lighter teal for contrast */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Separation effect */
+    background: #2C6A8D;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .navigation a {
     text-decoration: none;
     color: #F1FAEE;
     font-size: 18px;
-    padding: 12px 30px; /* Adjusted padding */
+    padding: 12px 30px;
     border-radius: 5px;
     margin: 0 10px;
-    background: linear-gradient(135deg, #676868, #02181488); /* Muted gradient */
+    background: linear-gradient(135deg, #676868, #02181488);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s ease-in-out;
 }
 
 .navigation a:hover {
-    background: linear-gradient(135deg, #00C9A7, #4C8C99); /* Reverse gradient on hover */
+    background: linear-gradient(135deg, #00C9A7, #4C8C99);
     color: #2D3E50;
-    transform: translateY(-3px) scale(1.05); /* Slight lift and zoom effect */
+    transform: translateY(-3px) scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -107,74 +100,41 @@ main {
     flex-grow: 1;
 }
 
-/* Left Column Styling - Food Adulteration Background */
+/* Left Column Styling */
 .left-column {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-blend-mode: overlay; /* Overlay effect */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
-    position: relative;
-    color: #F1FAEE; /* Ensure text is readable */
+    color: #F1FAEE;
 }
 
 .left-column button {
-    display: block;
-    width: 200px; /* Slightly wider for better aesthetics */
-    padding: 14px 0; /* More padding for a comfortable click area */
-    margin: 14px 0; /* Balanced spacing */
-    font-size: 18px; /* Consistent font size */
-    font-weight: bold; /* Make text stand out */
-    color: #F1FAEE; /* Light text color */
-    background: linear-gradient(135deg, #007B83, #00D1B2); /* Vibrant gradient */
-    border: none; /* Clean borderless look */
-    border-radius: 25px; /* Rounded edges for a modern look */
-    cursor: pointer; /* Indicates interactivity */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth hover effect */
-    text-transform: uppercase; /* Uniform text style */
-    text-align: center; /* Center-align text */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
-    position: relative; /* For layering if needed */
-    overflow: hidden; /* Prevent overflow from animations */
+    width: 350px;
+    padding: 20px 0;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #F1FAEE;
+    background: linear-gradient(135deg, #007B83, #00D1B2);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .left-column button:hover {
-    background: linear-gradient(135deg, #00D1B2, #007B83); /* Reverse gradient for hover */
-    transform: translateY(-3px) scale(1.05); /* Slight lift and zoom effect */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
-    color: #F1FAEE; /* Maintain text color */
+    background: linear-gradient(135deg, #00D1B2, #007B83);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
-
-.left-column button:active {
-    transform: translateY(1px); /* Button depress effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Less shadow for pressed effect */
-}
-
-.left-column button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Subtle highlight effect */
-    z-index: 1;
-    transition: width 0.3s ease-in-out; /* Smooth highlight animation */
-}
-
-.left-column button:hover::before {
-    width: 100%; /* Full highlight on hover */
-}
-
-.left-column button span {
-    position: relative;
-    z-index: 2; /* Ensure text is above highlight */
-}
-
 
 .right-column {
     flex: 1;
@@ -197,7 +157,7 @@ main {
     right: 5%; /* Slight margin from right */
     font-size: 2rem;
     color: #f5f5f5;
-    animation: floatUp 40s linear infinite; /* Faster animation loop */
+    animation: floatUp 30s linear infinite; /* Faster animation loop */
     line-height: 1.5;
     background: transparent;
     width: auto;
@@ -205,35 +165,439 @@ main {
 
 @keyframes floatUp {
     0% {
-        bottom: -50px;
+        bottom: -10px;
         transform: translateY(100%);
         opacity: 1;
     }
     80% {
-        transform: translateY(-100%);
+        transform: translateY(-50%);
         opacity: 1;
     }
     100% {
-        bottom: -50px; /* Start from the bottom */
-        transform: translateY(100%);
+        bottom: -10px; /* Start from the bottom */
+        transform: translateY(50%);
         opacity: 0; /* Fade out at the very end */
     }
 }
 
 
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Content */
+.popup-content {
+    position: relative;
+    width: 70%; /* 70% of the screen width */
+    height: 70%; /* 70% of the screen height */
+    background: linear-gradient(135deg, #1D3557, #457B9D); /* Matching theme */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    color: #F1FAEE;
+    font-family: 'Arial', sans-serif;
+}
+
+/*#feedbackForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#feedbackForm textarea {
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+#feedbackForm button {
+    padding: 10px 20px;
+    background: #007B83;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+#feedbackForm button:hover {
+    background: #00D1B2;
+}
+*/
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #F1FAEE;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    transform: scale(1.5);
+    color: #FF6B6B; /* Red color for hover */
+}
+
+/*Forms Content*/
+form {
+    max-width: 100%; /* Adjusted to cover 80% of the popup overlay */
+    margin: 1rem auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem; /* Larger font size for visibility */
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #F1FAEE;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0px 0px 5px rgba(255, 255, 255, 0.6);
+    text-align: center; /* Center align the heading */
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: white; /* Darker text color for better contrast */
+}
+
+input, textarea {
+    width: 95%; /* Adjusted width to fit the form */
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #7eefeb;
+    border-radius: 5px;
+    background-color: ghostwhite;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+
+input, textarea::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: rgb(0, 0, 0.5);
+    opacity: 1;
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #007B83, #00D1B2);
+    color: #F1FAEE;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #00D1B2, #007B83);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Additional styles for responsiveness */
+.popup-content {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.close-btn {
+    font-size: 1.5rem;
+    color: #333;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+
+/* Popup Text Content */
+#popupText {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+
+/* Rotating Lights Container */
+.rotating-lights {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Ensures lights don't block interaction with the popup */
+    animation: rotatePopup 6s linear infinite; /* Rotates the entire set of lights */
+}
+
+/* Light Styles */
+.rotating-lights .light {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Position Lights on Popup Borders */
+.rotating-lights .light:nth-child(1) {
+    top: -10px; /* Moves the light slightly above the top border */
+    left: 50%; /* Centers horizontally */
+    transform: translateX(-50%);
+}
+
+.rotating-lights .light:nth-child(2) {
+    right: -10px; /* Moves the light slightly to the right of the border */
+    top: 50%; /* Centers vertically */
+    transform: translateY(-50%);
+}
+
+.rotating-lights .light:nth-child(3) {
+    bottom: -10px; /* Moves the light slightly below the bottom border */
+    left: 50%; /* Centers horizontally */
+    transform: translateX(-50%);
+}
+
+.rotating-lights .light:nth-child(4) {
+    left: -10px; /* Moves the light slightly to the left of the border */
+    top: 50%; /* Centers vertically */
+    transform: translateY(-50%);
+}
+
+/* Rotating Animation */
+@keyframes rotatePopup {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Footer Section */
 footer {
     text-align: center;
     padding: 10px;
-    background: linear-gradient(to right, #1D3557, #457B9D); 
+    background: linear-gradient(to right, #1D3557, #457B9D);
     color: #F1FAEE;
-    font-size: 14px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
-footer p {
+/* Reviews Page */
+#reviews {
+    background-color: rgba(255, 255, 255, 0.662);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+
+/* Add Your Review Button */
+.add-review-btn {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #16a085;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.add-review-btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Overlay Popup */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background-color: rgba(43, 147, 207, 0.795);
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    color: #ffffff;
+}
+
+.popup input, .popup textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #16a085;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #1abc9c;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+
+.review {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-header h3 {
     margin: 0;
+    font-size: 1.1rem;
+    color: green;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    transform: scale(1.5);
+    color: #FF6B6B; 
+}
+
+
+/* Style for the review text */
+.review p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+/* About Us Page */
+#about {
+    background-color: rgba(255, 255, 255, 0.662);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.244);
+    border-radius: 30px;
+    
+}
+
+#about h2 {
+    text-align: center;
+    color: #000000;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #424343;
+    margin-bottom: 20px;
+}
+
+#about h3 {
+    color: #2c3e50;
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+#about ul {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #424343;
+}
+
+#about ul li {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    line-height: 1.6;
+    color: #424343;
 }
